@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+          background-image: url('static/newbg.png');
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          background-size: 75% 100%;
+        }
+    </style>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Predict Diabetes</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/style.css">
+</head>
+
+<body> 
+    
+<div class="registration-form">
+    
+    
+
+    <form action="{{url_for('predict_datapoint')}}" method="post">
+        <h1>Diabetes Prediction</h1>
+
+        <div class="form-group">
+            <input type="text" class="form-control item" name="Pregnancies" placeholder="Pregnancies" required="required"/>
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control item" name="Glucose" placeholder="Glucose" required="required"/>
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control item" name="BloodPressure" placeholder="BloodPressure" required="required"/>
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control item" name="SkinThickness" placeholder="SkinThickness" required="required"/>
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control item" name="Insulin" placeholder="Insulin" required="required"/>
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control item" name="BMI" placeholder="BMI" required="required"/>
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control item" name="DiabetesPedigreeFunction" placeholder="DiabetesPedigreeFunction" required="required"/>
+        </div>
+        <div class="form-group">
+            <input type="text"  class="form-control item" name="Age" placeholder="Age" required="required"/>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn-new">Predict</button>
+        </div>
+        <h1>
+            {{result}}
+        </h1>
+    </form>
+</body>
+</html>
